@@ -1,28 +1,38 @@
 package com.moretech.server.models;
 
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import javax.persistence.*;
 
-import java.util.Set;
-import java.util.stream.Collectors;
+@Entity
+@Table(name = "roles")
+public class Role {
 
-public enum Role {
-    USER(Set.of(Permission.DEVELOPERS_READ)),
-    ADMIN(Set.of(Permission.DEVELOPERS_READ)),
-    SYSADMIN(Set.of(Permission.DEVELOPERS_READ, Permission.DEVELOPERS_WRITE));
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private final Set<Permission> permissions;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private ERole name;
 
-    Role(Set<Permission> permissions){
-        this.permissions = permissions;
+    public Role() {}
+
+    public Role(ERole name) {
+        this.name = name;
     }
 
-    public Set<Permission> getPermissions(){
-        return permissions;
+    public Long getId() {
+        return id;
     }
 
-    public Set<SimpleGrantedAuthority> getAuthorities(){
-        return getPermissions().stream()
-                .map(permission -> new SimpleGrantedAuthority(permission.getPermission()))
-                .collect(Collectors.toSet());
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public ERole getName() {
+        return name;
+    }
+
+    public void setName(ERole name) {
+        this.name = name;
     }
 }
