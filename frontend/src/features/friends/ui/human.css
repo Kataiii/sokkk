@@ -1,0 +1,54 @@
+
+  .humanCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 25px;
+  }
+  .humanCard img{
+    width: 60px;
+    padding-right: 30px;
+  }
+  .title{
+    width: 60%;
+    display: flex;
+  }
+  .button{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .button button{
+    width: 180px;
+    height: 28px;
+    background: #1141D3;
+    border-radius: 3px;
+  }
+  .titleHuman{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px 0 15px 0;
+  }
+  .img{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .username{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+    height: 30px;
+  }
+  .jobTitle{
+    font-family: 'Andika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 50px;
+  }

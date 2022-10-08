@@ -2,3 +2,105 @@
     height: 100%;
     background-color: cornflowerblue;
 }
+
+.basketCard{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 35px;
+  }
+
+  .basketCard:nth-last-child(){
+    margin-bottom: 0;
+  }
+
+  .productImg img{
+    width: 120px;
+    padding-right: 30px;
+  }
+  .title{
+    width: 60%;
+    display: flex;
+  }
+  .button{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .button button{
+    width: 180px;
+    height: 28px;
+    background: #1141D3;
+    border-radius: 3px;
+  }
+  .titleBasketCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px 0 15px 0;
+  }
+  .img{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .nameOfProduct{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+    height: 30px;
+  }
+  .description{
+    font-family: 'Andika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 50px;
+  }
+  .cross img{
+    width: 30px;
+
+  }
+  .cross{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cross button{
+    padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  }
+  .plus{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .minus{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 50px;
+  }
+  .buttons{
+    display: flex;
+  }

@@ -30,7 +30,7 @@ const dirLightThreeConfig: DirectionalLightProps = {
 const Scene: React.FC = () => {
 
     return (
-        <Canvas shadows style={{ background: "#fffff" }}>
+        <Canvas shadows style={{ background: "#EBF0FB" }}>
             <OrbitControls
                 enablePan={false}
                 maxDistance = {5}
