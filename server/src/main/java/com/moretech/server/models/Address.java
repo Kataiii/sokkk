@@ -16,21 +16,22 @@ public class Address {
     private String subject;
     private String city;
     private String street;
-    private int home_number;
-    private int flat_number;
+    private int homeNumber;
+    private int flatNumber;
     private String index;
+    @ManyToMany(fetch = FetchType.LAZY)
     private Set<User> users = new HashSet<>();
 
     public Address() {}
 
     public Address(String country, String subject, String city, String street,
-                   int home_number, int flat_number, String index, Set<User> users) {
+                   int homeNumber, int flatNumber, String index, Set<User> users) {
         this.country = country;
         this.subject = subject;
         this.city = city;
         this.street = street;
-        this.home_number = home_number;
-        this.flat_number = flat_number;
+        this.homeNumber = homeNumber;
+        this.flatNumber = flatNumber;
         this.index = index;
         this.users = users;
     }
@@ -75,20 +76,20 @@ public class Address {
         this.street = street;
     }
 
-    public int getHome_number() {
-        return home_number;
+    public int getHomeNumber() {
+        return homeNumber;
     }
 
-    public void setHome_number(int home_number) {
-        this.home_number = home_number;
+    public void setHomeNumber(int homeNumber) {
+        this.homeNumber = homeNumber;
     }
 
-    public int getFlat_number() {
-        return flat_number;
+    public int getFlatNumber() {
+        return flatNumber;
     }
 
-    public void setFlat_number(int flat_number) {
-        this.flat_number = flat_number;
+    public void setFlatNumber(int flat_number) {
+        this.flatNumber = flat_number;
     }
 
     public String getIndex() {
