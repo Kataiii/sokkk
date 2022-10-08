@@ -13,7 +13,7 @@ interface UserState{
 
 const initialState: UserState = {
     email: null,
-    isAuthorized: false,
+    isAuthorized: true,
     password: null,
     token: null,
     signUpStatus: FetchingStatus.NEVER
@@ -33,7 +33,6 @@ const userSlice = createSlice({
         }),
 
         builder.addCase(login.fulfilled, (state, action: PayloadAction<UserState>) => {
-        
             state.signUpStatus = FetchingStatus.SUCCESFUL;
             state.email = action.payload.email;
             state.password = action.payload.password;

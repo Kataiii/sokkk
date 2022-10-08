@@ -4,7 +4,7 @@ import axios from 'axios';
 const URL = '#';
 
 
-const login = (username:any, password:any) => {
+const login = (username:string, password:string) => {
     return axios
       .post(URL + "login", {
         username,

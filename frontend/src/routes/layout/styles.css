@@ -1,0 +1,54 @@
+.layout {
+    background-color: #E5E5E5;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 85px;
+    padding: 0 56px;
+    background-color: #050D23;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__title {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 50px;
+    color: #FAFAFA;
+    margin-left: 117px;
+}
+
+.flex-group {
+    display: flex;
+    align-items: center;
+}
+
+.action-group{
+    gap: 42px
+}
+
+.balance {
+    display: flex;
+    align-items: center;
+}
+
+.balance__coins {
+    margin-right: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #FAFAFA;
+}
+
+.content {
+    flex: 1;
+    overflow-y: scroll;
+}

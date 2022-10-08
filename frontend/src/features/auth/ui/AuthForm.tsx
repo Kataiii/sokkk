@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './styles.css';
-const image = require('../../../assets/images/peoples.png');
+const image = require('../../../assets/images/people.png');
 import { Button, Form, Input } from 'antd';
 import { login } from '../redux/asyncActions';
 import { useAppDispatch } from '../../../app/store';
@@ -21,7 +21,7 @@ const AuthForm: React.FC = () => {
   }
 
   return (
-    <div className='container'>
+    <div className='wrapper'>
       <div className='container_form'>
         <div className='container_form-back'>
           <Form form={form} className='form' name="horizontal_login" layout="inline" onFinish={onLoginSubmit}>
