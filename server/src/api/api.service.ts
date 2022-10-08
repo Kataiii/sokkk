@@ -10,7 +10,10 @@ import {
     BalanceResponse,
     NFTResponse,
     SendNftRequest,
-    NFTInfo
+    NFTInfo,
+    NFTInfoByTransaction,
+    HistoryParams,
+    History
 } from './types';
 
 const axios = require('axios')
@@ -90,10 +93,30 @@ export class ApiService {
         });
     }
 
-    public async getNFTInfo(tokenId: number) {
+    public async getNFTInfo(tokenId: number): Promise<NFTInfo> {
         return this.makeRequest<{}, NFTInfo>({
             url: makeUrl(`/v1/nft/${tokenId}`),
             method: 'GET',
+        }); 
+    }
+
+    public async getGeneratedNFTList(transactionHash: string) {
+        return this.makeRequest<{}, NFTInfoByTransaction>({
+            url: makeUrl(`/v1/nft/generate/${transactionHash}`),
+            method: 'GET',
+        }); 
+    }
+
+    public async getTransactionHistory(publicKey: string, params: HistoryParams) {
+        params = {
+            ... {page: 20, offset: 0, sort: 'asc'},
+            ... params
+        };
+        
+        return this.makeRequest<HistoryParams, History>({
+            url: makeUrl(`/v1/wallets/${publicKey}/history`),
+            method: 'POST',
+            data: params
         }); 
     }
 }

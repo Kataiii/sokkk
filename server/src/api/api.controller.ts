@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Param, Body } from '@nestjs/common';
 import { ApiService } from './api.service';
-import { GenerateNftDTO } from './dto';
+import { GenerateNftDTO, TransactionHistoryDTO } from './dto';
 import { NewWalletResposne } from './types';
 
 @Controller('api')
@@ -35,5 +35,10 @@ export class ApiController {
   @Post('nft/generate')
   generateNewNFT(@Body() dto: GenerateNftDTO) {
       return this.apiService.sendNFT(dto);
+  }
+
+  @Post('wallet/history/:publicKey')
+  getTransactionHistory(@Body() dto: TransactionHistoryDTO, @Param() params) {
+    return this.apiService.getTransactionHistory(params.publicKey, dto);
   }
 }
