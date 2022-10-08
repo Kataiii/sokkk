@@ -1,0 +1,27 @@
+.ant-modal-body{
+    height: 350px;
+}
+.img_block{
+    position: absolute;
+    z-index: 1;
+    width: 90vh;
+    height: 90vh
+}
+.img img{
+    height: 43vh;
+    width: 50vh;
+    margin-left: 70px;
+}
+.footerText{
+    font-family: 'Andika';
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: -0.015em;
+}
+.ant-modal-content{
+    border-radius: 8px;
+}
+

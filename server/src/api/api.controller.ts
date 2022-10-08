@@ -36,4 +36,9 @@ export class ApiController {
   generateNewNFT(@Body() dto: GenerateNftDTO) {
       return this.apiService.sendNFT(dto);
   }
+
+  @Post('wallet/history/:publicKey')
+  getTransactionHistory(@Body() dto: TransactionHistoryDTO, @Param() params) {
+    return this.apiService.getTransactionHistory(params.publicKey, dto);
+  }
 }

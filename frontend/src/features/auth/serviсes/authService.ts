@@ -1,12 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import {setUser} from 'store/slices/authSlice';
 
 const URL = '#';
 
-const login = (username:any, password:any) => {
+
+const login = (username:string, password:string) => {
     return axios
       .post(URL + "login", {
         username,
@@ -18,7 +16,7 @@ const login = (username:any, password:any) => {
   };
 
 const authService = {
-    login
+    login: login
 };
 
 export default authService;
