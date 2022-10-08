@@ -6,6 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { getMongoConfig } from './configs/mongo.config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { ApiModule } from './api/api.module';
 import { WalletModule } from './wallet/wallet.module';
 import { StuffModule } from './stuff/stuff.module';
 
@@ -17,7 +18,8 @@ import { StuffModule } from './stuff/stuff.module';
 		AuthModule,
 		UserModule,
 		WalletModule,
-		StuffModule
+		StuffModule,
+    ApiModule,
 	],
 	controllers: [AppController],
 	providers: [AppService]
