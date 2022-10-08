@@ -9,5 +9,5 @@ export class AuthLoginDto {
 
   @IsString()
   @IsPhoneNumber()
-  phone: string;
+  email: string;
 }

@@ -7,48 +7,49 @@ import { User, UserRole } from '../user/models/user.model';
 import { AuthRegisterDto } from './dto/auth-register.dto';
 import { AuthErrorMessages } from './auth.constants';
 
+
 @Injectable()
 export class AuthService {
-  constructor(
-    @InjectModel(User.name) private readonly userModel: Model<User>,
-    private readonly jwtService: JwtService,
-  ) {
-  }
+	constructor(
+		@InjectModel(User.name) private readonly userModel: Model<User>,
+		private readonly jwtService: JwtService
+	) {
+	}
 
-  async register(@Body() { phone, username, password, role = UserRole.Customer }: AuthRegisterDto): Promise<User> {
-    const oldUser = await this.findUserByPhone(phone);
-    if (oldUser) {
-      throw new BadRequestException(AuthErrorMessages.AlreadyExist);
-    }
+	async register(@Body() {email, username, password, role = UserRole.User}: AuthRegisterDto): Promise<User> {
+		const oldUser = await this.findUserByEmail(email);
+		if (oldUser) {
+			throw new BadRequestException(AuthErrorMessages.AlreadyExist);
+		}
 
-    const salt = await genSalt(10);
-    const passwordHash = await hash(password, salt);
+		const salt = await genSalt(10);
+		const passwordHash = await hash(password, salt);
 
-    const user = new this.userModel({ username, phone, passwordHash, role });
-    return user.save();
-  }
+		const user = new this.userModel({username, email, passwordHash, role});
+		return user.save();
+	}
 
-  async login(id: string): Promise<{ access_token: string }> {
-    return {
-      access_token: await this.jwtService.signAsync({ id }),
-    };
-  }
+	async login(id: string): Promise<{ access_token: string }> {
+		return {
+			access_token: await this.jwtService.signAsync({id})
+		};
+	}
 
-  async findUserByPhone(phone: string): Promise<User> {
-    return await this.userModel.findOne({ phone }).exec();
-  }
+	async findUserByEmail(email: string): Promise<User> {
+		return await this.userModel.findOne({email}).exec();
+	}
 
-  async validateUser(phone: string, password: string): Promise<Pick<User, 'id'>> {
-    const user = await this.findUserByPhone(phone);
-    if (!user) {
-      throw new NotFoundException(AuthErrorMessages.WrongData);
-    }
+	async validateUser(phone: string, password: string): Promise<Pick<User, 'id'>> {
+		const user = await this.findUserByEmail(phone);
+		if (!user) {
+			throw new NotFoundException(AuthErrorMessages.WrongData);
+		}
 
-    const isPasswordCorrect = await compare(password, user.passwordHash);
-    if (!isPasswordCorrect) {
-      throw new NotFoundException(AuthErrorMessages.WrongData);
-    }
+		const isPasswordCorrect = await compare(password, user.passwordHash);
+		if (!isPasswordCorrect) {
+			throw new NotFoundException(AuthErrorMessages.WrongData);
+		}
 
-    return { id: user.id };
-  }
+		return {id: user.id};
+	}
 }
