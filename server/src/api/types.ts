@@ -1,4 +1,4 @@
-export type NewWalletResposne = {
+export type NewWalletResponse = {
     privateKey: string;
     publicKey: string;
 }

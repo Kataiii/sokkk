@@ -16,4 +16,4 @@ export class Wallet extends Document {
 	user: User;
 }
 
-export const UserSchema = SchemaFactory.createForClass(Wallet);
+export const WalletSchema = SchemaFactory.createForClass(Wallet);

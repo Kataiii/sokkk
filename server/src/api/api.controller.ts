@@ -1,14 +1,14 @@
 import { Controller, Get, Post, Param, Body } from '@nestjs/common';
 import { ApiService } from './api.service';
 import { GenerateNftDTO } from './dto';
-import { NewWalletResposne } from './types';
+import { NewWalletResponse } from './types';
 
 @Controller('api')
 export class ApiController {
   constructor(private readonly apiService: ApiService) {}
 
   @Post('new-wallet')
-  getHello(): Promise<NewWalletResposne> {
+  getHello(): Promise<NewWalletResponse> {
     return this.apiService.makeNewWallet();
   }
 

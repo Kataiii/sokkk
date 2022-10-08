@@ -8,6 +8,8 @@ import { PassportModule } from '@nestjs/passport';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from '../user/models/user.model';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { WalletModule } from '../wallet/wallet.module';
+import { ApiModule } from '../api/api.module';
 
 
 @Module({
@@ -17,7 +19,9 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 		]),
 		JwtModule.registerAsync(getJwtConfig()),
 		ConfigModule,
-		PassportModule
+		PassportModule,
+		WalletModule,
+		ApiModule
 	],
 	controllers: [AuthController],
 	providers: [AuthService, JwtStrategy]

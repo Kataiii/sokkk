@@ -3,12 +3,13 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User } from './models/user.model';
 import { Model } from 'mongoose';
 import { UserErrorMessages } from './user.constants';
+import { WalletService } from '../wallet/wallet.service';
 
 
 @Injectable()
 export class UserService {
 	constructor(
-		@InjectModel(User.name) private readonly userModel: Model<User>
+		@InjectModel(User.name) private readonly userModel: Model<User>,
 	) {
 	}
 
