@@ -41,17 +41,21 @@ const shopSlice = createSlice({
                 state.cart[itemIndex].count++;
             }
         },
-        deleteFromCart(state, action: PayloadAction<ShopItem>) {
+        increaseCount(state, action: PayloadAction<ShopItem>) {
             const itemIndex = state.cart.findIndex((item) => item.productId == action.payload.id);
             const count = state.cart[itemIndex].count;
             state.cart = [...state.cart.slice(0, itemIndex), ...state.cart.slice(itemIndex + 1, state.cart.length - 1)];
-            if (count == 1) {
+            if (count != 1) {
                 state.cart = [
                     ...state.cart.slice(0, itemIndex),
                     { productId: action.payload.id, count: count - 1 },
                     ...state.cart.slice(itemIndex + 1, state.cart.length - 1)
                 ];
             }
+        },
+        deleteFromCart(state, action: PayloadAction<ShopItem>) {
+            const itemIndex = state.cart.findIndex((item) => item.productId == action.payload.id);
+            state.cart = [...state.cart.slice(0, itemIndex), ...state.cart.slice(itemIndex + 1, state.cart.length - 1)];
         }
     },
     extraReducers: (builder) => {

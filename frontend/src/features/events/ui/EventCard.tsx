@@ -11,8 +11,8 @@ const EventCard:React.FC<EventCardProp> = ({title, description}) => {
     return (
         <div className='event-card__wrapper'>
             <img src={FakeImage}/>
-            <div className=  'event-card__content'>
-                
+            <div className='event-card__content'>
+
             </div>
         </div>
     )

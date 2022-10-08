@@ -1,10 +1,12 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './styles.css';
-const image = require('../../../assets/images/people.png');
 import { Button, Form, Input } from 'antd';
 import { login } from '../redux/asyncActions';
 import { useAppDispatch } from '../../../app/store';
+import People from '../../../assets/images/people.png'
+import { redirect, useNavigate } from 'react-router-dom';
+
 
 interface FormState {
   username: string,
@@ -15,9 +17,11 @@ const AuthForm: React.FC = () => {
   const [form] = Form.useForm<FormState>();
 
   const dispatch = useAppDispatch();
-  
+  const navigate = useNavigate();
+
   const onLoginSubmit = (values: FormState) => {
     dispatch(login({ username: values.username, password: values.password }));
+    navigate('/home/scene');
   }
 
   return (
@@ -59,7 +63,7 @@ const AuthForm: React.FC = () => {
           </Form>
         </div>
       </div>
-      <div className='img_block'> <img src={image} alt="img of peoples" /></div>
+      <div className='img_block'> <img src={People} alt="img of peoples" /></div>
       <div className='empty_block'></div>
     </div>
 

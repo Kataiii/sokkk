@@ -12,6 +12,7 @@ const Cart: React.FC = () => {
     const products: Array<Product> = cart.map(cartProduct => {
         const item = items.find((item) => item.id == cartProduct.productId)!;
         return {
+            id: item.id,
             img: item.imgPath,
             title: item.title,
             price: item.price,
