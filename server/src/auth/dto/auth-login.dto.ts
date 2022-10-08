@@ -1,13 +1,14 @@
-import { IsPhoneNumber, IsString } from 'class-validator';
+import { IsEmail, IsString } from 'class-validator';
+
 
 export class AuthLoginDto {
-  @IsString()
-  username: string;
+	@IsString()
+	username: string;
 
-  @IsString()
-  password: string;
+	@IsString()
+	password: string;
 
-  @IsString()
-  @IsPhoneNumber()
-  email: string;
+	@IsString()
+	@IsEmail()
+	email: string;
 }

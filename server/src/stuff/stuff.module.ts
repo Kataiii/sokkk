@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { JwtModule } from '@nestjs/jwt';
 import { getJwtConfig } from '../configs/jwt.config';
 import { Stuff, StuffSchema } from './models/stuff.model';
+import { ConfigModule } from '@nestjs/config';
 
 
 @Module({
@@ -12,7 +13,8 @@ import { Stuff, StuffSchema } from './models/stuff.model';
 		MongooseModule.forFeature([
 			{name: Stuff.name, schema: StuffSchema}
 		]),
-		JwtModule.registerAsync(getJwtConfig())
+		JwtModule.registerAsync(getJwtConfig()),
+		ConfigModule
 	],
 	controllers: [StuffController],
 	providers: [StuffService]
