@@ -12,7 +12,7 @@ public class Wallet {
     @Column(name = "private_key")
     private String privateKey;
 
-    @Column(name = "private_key")
+    @Column(name = "public_key")
     private String publicKey;
 
     @ManyToOne(fetch = FetchType.EAGER)

@@ -19,8 +19,10 @@ public class Address {
     private int homeNumber;
     private int flatNumber;
     private String index;
+
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<User> users = new HashSet<>();
+
 
     public Address() {}
 
@@ -33,7 +35,7 @@ public class Address {
         this.homeNumber = homeNumber;
         this.flatNumber = flatNumber;
         this.index = index;
-        this.users = users;
+//        this.users = users;
     }
 
     public Long getId() {
@@ -100,11 +102,11 @@ public class Address {
         this.index = index;
     }
 
-    public Set<User> getUsers() {
-        return users;
-    }
+//    public Set<User> getUsers() {
+//        return users;
+//    }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
+//    public void setUsers(Set<User> users) {
+//        this.users = users;
+//    }
 }
