@@ -12,7 +12,7 @@ export class AuthRegisterDto {
 
   @IsString()
   @IsPhoneNumber()
-  phone: string;
+  email: string;
 
   @IsEnum(UserRole)
   @IsOptional()

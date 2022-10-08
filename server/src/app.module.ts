@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
@@ -7,16 +7,22 @@ import { getMongoConfig } from './configs/mongo.config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { ApiModule } from './api/api.module';
+import { WalletModule } from './wallet/wallet.module';
+import { StuffModule } from './stuff/stuff.module';
+
 
 @Module({
-  imports: [
-    ConfigModule.forRoot(),
-    MongooseModule.forRootAsync(getMongoConfig()),
-    AuthModule,
-    UserModule,
+	imports: [
+		ConfigModule.forRoot(),
+		MongooseModule.forRootAsync(getMongoConfig()),
+		AuthModule,
+		UserModule,
+		WalletModule,
+		StuffModule,
     ApiModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+	],
+	controllers: [AppController],
+	providers: [AppService]
 })
-export class AppModule {}
+export class AppModule {
+}
