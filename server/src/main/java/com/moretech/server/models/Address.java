@@ -19,7 +19,7 @@ public class Address {
     private int home_number;
     private int flat_number;
     private String index;
-    private Set<User> users = new HashSet<>();
+//    private Set<User> users = new HashSet<>();
 
     public Address() {}
 
@@ -32,7 +32,7 @@ public class Address {
         this.home_number = home_number;
         this.flat_number = flat_number;
         this.index = index;
-        this.users = users;
+//        this.users = users;
     }
 
     public Long getId() {
@@ -99,11 +99,11 @@ public class Address {
         this.index = index;
     }
 
-    public Set<User> getUsers() {
-        return users;
-    }
+//    public Set<User> getUsers() {
+//        return users;
+//    }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
-    }
+//    public void setUsers(Set<User> users) {
+//        this.users = users;
+//    }
 }

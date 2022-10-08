@@ -44,11 +44,11 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "wallet_id"))
     private Set<Wallet> wallets = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_friends",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> friends;
+//    @ManyToMany(fetch = FetchType.LAZY)
+//    @JoinTable(name = "user_friends",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+//    private Set<User> friends;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_addresses",
@@ -60,7 +60,7 @@ public class User {
                 Set<Wallet> wallets, Set<User> friends, Set<Address> addresses) {
         this.username = username;
         this.passwordHash = passwordHash;
-        this.friends = friends;
+//        this.friends = friends;
         this.post = post;
         this.wallets = wallets;
         this.addresses = addresses;
