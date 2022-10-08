@@ -6,7 +6,7 @@ interface Props{
     listHumans: Array<HumanProps>;
 }
 
-const FriendsLeft : React.FC<Props> = (props) => {
+const FriendsContainer : React.FC<Props> = (props) => {
     return (
         <div className='container'>
             {props.listHumans.map(function(item, i){
@@ -17,4 +17,4 @@ const FriendsLeft : React.FC<Props> = (props) => {
     );
 };
 
-export default FriendsLeft;
+export default FriendsContainer;

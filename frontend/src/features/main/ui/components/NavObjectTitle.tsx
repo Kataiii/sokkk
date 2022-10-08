@@ -12,7 +12,7 @@ const NavObjectTitle: React.FC<NavObjectTitleProps> = ({position, title}) => {
 
     return (
         <Html rotation={[0, -Math.PI/2, 0]} transform position={position}>
-            <div>
+            <div className='obj__title'>
                 {title}
             </div>
         </Html>

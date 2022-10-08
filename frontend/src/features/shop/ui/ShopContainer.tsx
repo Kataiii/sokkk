@@ -18,7 +18,7 @@ const ShopContainer: React.FC<ShopContainerProps> = ({ fetchingStatus, items }) 
                 <div className='container_cards'>
                     {fetchingStatus == FetchingStatus.LOADING
                         ? <div>Loading...</div>
-                        : items.map(item => <Card item={item} />)
+                        : items.map(item => <Card key={item.id} item={item} />)
                     }
 
                     {/* <Card img={image} title='Название товара' description='Описание товара' price={100} />

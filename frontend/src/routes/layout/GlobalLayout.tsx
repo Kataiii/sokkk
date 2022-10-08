@@ -8,6 +8,7 @@ import CoinIcon from '../../assets/icons/coins.svg';
 import { useAppSelector } from '../../app/store';
 import routesTitleConfig from '../routesTitleConfig';
 import {ShoppingCartOutlined  } from "@ant-design/icons";
+import ShopCart from '../../features/shop/ui/ShopCart';
 
 
 const GlobalLayout: React.FC = () => {
@@ -45,7 +46,7 @@ const GlobalLayout: React.FC = () => {
                         <Icon component={() => <img src={CoinIcon} />} />
                     </div>
                     {isMarketplace() 
-                        ?  <ShoppingCartOutlined style={{color: '#FAFAFA', fontSize: 32}} onClick={() => console.log('shop')} />
+                        ?  <ShopCart></ShopCart>
                         : null
                     }
                     <Icon

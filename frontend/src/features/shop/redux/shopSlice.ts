@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { FetchingStatus } from "../../../common/utility_types/FetchingStatus";
 import { loadProduct } from "./asyncActions";
 
-interface CartItem {
+export interface CartItem {
     productId: number,
     count: number
 }
@@ -38,13 +38,7 @@ const shopSlice = createSlice({
                 state.cart.push({ productId: action.payload.id, count: 1 });
             }
             else {
-                const count = state.cart[itemIndex].count;
-                state.cart = [...state.cart.slice(itemIndex), ...state.cart.slice(itemIndex + 1, state.cart.length - 1)];
-                state.cart = [
-                    ...state.cart.slice(0, itemIndex),
-                    { productId: action.payload.id, count: count + 1 },
-                    ...state.cart.slice(itemIndex + 1, state.cart.length - 1)
-                ];
+                state.cart[itemIndex].count++;
             }
         },
         deleteFromCart(state, action: PayloadAction<ShopItem>) {

@@ -1,0 +1,13 @@
+.event-card__wrapper{
+    padding: 14px 20px;
+    display: flex;
+    align-items: flex-end;
+}
+.event-card__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+

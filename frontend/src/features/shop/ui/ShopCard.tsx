@@ -12,15 +12,14 @@ interface CardProps {
   item: ShopItem
 }
 
-const CardShop: React.FC<CardProps> = ({item}) => {
+const CardShop: React.FC<CardProps> = ({ item }) => {
 
   const { imgPath, description, price, title, id } = item;
 
   const dispatch = useAppDispatch();
 
- // const addToCart = dispatch(shopSlice.actions.addToCart(item));
-  const addToCart = () => {};
-    return (
+  const addToCart = () => dispatch(shopSlice.actions.addToCart(item));
+  return (
     <>
       <Card style={{ width: 285 }}>
         <img alt="example" src={imgPath} />
@@ -31,7 +30,7 @@ const CardShop: React.FC<CardProps> = ({item}) => {
             {price}
             <Icon style={{ fontSize: 32, color: '#050D23' }} component={() => <img src={CoinsIcon} />} />
           </p>
-          <Button type="primary" >
+          <Button type="primary" onClick={addToCart}>
             Купить
           </Button>
         </div>
