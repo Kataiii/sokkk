@@ -1,5 +1,3 @@
-import exp from "constants";
-
 export type NewWalletResposne = {
     privateKey: string;
     publicKey: string;

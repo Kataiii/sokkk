@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { 
-    NewWalletResposne,
+    NewWalletResponse,
     TransferCurrencyDto,
     TransferResponse,
     TransferNFTDto,
@@ -29,8 +29,8 @@ export class ApiService {
         return axios.request(config).then(response => response.data);
     }
 
-    public async makeNewWallet(): Promise<NewWalletResposne> {
-        return this.makeRequest<{}, NewWalletResposne>({
+    public async makeNewWallet(): Promise<NewWalletResponse> {
+        return this.makeRequest<{}, NewWalletResponse>({
             url: makeUrl('/v1/wallets/new'),
             method: 'POST'
         });
