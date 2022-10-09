@@ -310,6 +310,7 @@ const Room: React.FC = () => {
                             />
                         </group>
                     </NavObject>
+                    <NavObject navPath='/home/selery'>
                     <group
                         name="CoffeeMachine"
                         position={[1.74, 0.01, 0.82]}
@@ -360,6 +361,8 @@ const Room: React.FC = () => {
                             material={materials.White}
                         />
                     </group>
+                    </NavObject>
+                    <NavObject navPath='/home/selery'>
                     <group
                         name="Cups"
                         position={[1.69, 2.35, 1.18]}
@@ -403,6 +406,7 @@ const Room: React.FC = () => {
                             material={materials.White}
                         />
                     </group>
+                    </NavObject>
                     <group
                         name="TableWithBooks"
                         position={[0.06, 0, -1.37]}
@@ -460,41 +464,43 @@ const Room: React.FC = () => {
                             material={materials.LigthGreen}
                         />
                     </group>
-                    <group
-                        name="Table"
-                        position={[0.18, 0.4, 1.14]}
-                        scale={[0.04, 0.38, 0.04]}
-                        userData={{ name: "Table" }}
-                    >
-                        <mesh
-                            name="Cylinder007"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Cylinder007.geometry}
-                            material={materials.White}
-                        />
-                        <mesh
-                            name="Cylinder007_1"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Cylinder007_1.geometry}
-                            material={materials.LightBrown}
-                        />
-                        <mesh
-                            name="Cylinder007_2"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Cylinder007_2.geometry}
-                            material={materials.Black}
-                        />
-                        <mesh
-                            name="Cylinder007_3"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Cylinder007_3.geometry}
-                            material={materials.Blue}
-                        />
-                    </group>
+                    <NavObject navPath='/home/social'>
+                        <group
+                            name="Table"
+                            position={[0.18, 0.4, 1.14]}
+                            scale={[0.04, 0.38, 0.04]}
+                            userData={{ name: "Table" }}
+                        >
+                            <mesh  
+                                name="Cylinder007"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Cylinder007.geometry}
+                                material={materials.White}
+                            />
+                            <mesh
+                                name="Cylinder007_1"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Cylinder007_1.geometry}
+                                material={materials.LightBrown}
+                            />
+                            <mesh
+                                name="Cylinder007_2"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Cylinder007_2.geometry}
+                                material={materials.Black}
+                            />
+                            <mesh
+                                name="Cylinder007_3"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Cylinder007_3.geometry}
+                                material={materials.Blue}
+                            />
+                        </group>
+                    </NavObject>
                     <group
                         name="Room"
                         rotation={[Math.PI / 2, 0, Math.PI / 6]}
@@ -572,63 +578,67 @@ const Room: React.FC = () => {
                             material={materials.Blue}
                         />
                     </group>
-                    <group
-                        name="Shop"
-                        position={[-0.31, 3.5, 3.33]}
-                        rotation={[-Math.PI / 2, 0, Math.PI]}
-                        scale={0.01}
-                        userData={{ name: "Shop" }}
-                    >
-                        <mesh
-                            name="Object_5002"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Object_5002.geometry}
-                            material={materials.Brown}
-                        />
-                        <mesh
-                            name="Object_5002_1"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Object_5002_1.geometry}
-                            material={materials.Blue}
-                        />
-                        <mesh
-                            name="Object_5002_2"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Object_5002_2.geometry}
-                            material={materials.DarkBlue}
-                        />
-                        <mesh
-                            name="Object_5002_3"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Object_5002_3.geometry}
-                            material={materials.Green}
-                        />
-                        <mesh
-                            name="Object_5002_4"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Object_5002_4.geometry}
-                            material={materials.LightBrown}
-                        />
-                        <mesh
-                            name="Object_5002_5"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Object_5002_5.geometry}
-                            material={materials.Yellow}
-                        />
-                        <mesh
-                            name="Object_5002_6"
-                            castShadow
-                            receiveShadow
-                            geometry={nodes.Object_5002_6.geometry}
-                            material={materials.LigthBlue}
-                        />
-                    </group>
+
+                    <NavObject navPath='/home/market'>
+                        <group
+                            name="Shop"
+                            position={[-0.31, 3.5, 3.33]}
+                            rotation={[-Math.PI / 2, 0, Math.PI]}
+                            scale={0.01}
+                            userData={{ name: "Shop" }}
+                        >
+                            <mesh
+                                name="Object_5002"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Object_5002.geometry}
+                                material={materials.Brown}
+                            />
+                            <mesh
+                                name="Object_5002_1"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Object_5002_1.geometry}
+                                material={materials.Blue}
+                            />
+                            <mesh
+                                name="Object_5002_2"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Object_5002_2.geometry}
+                                material={materials.DarkBlue}
+                            />
+                            <mesh
+                                name="Object_5002_3"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Object_5002_3.geometry}
+                                material={materials.Green}
+                            />
+                            <mesh
+                                name="Object_5002_4"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Object_5002_4.geometry}
+                                material={materials.LightBrown}
+                            />
+                            <mesh
+                                name="Object_5002_5"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Object_5002_5.geometry}
+                                material={materials.Yellow}
+                            />
+                            <mesh
+                                name="Object_5002_6"
+                                castShadow
+                                receiveShadow
+                                geometry={nodes.Object_5002_6.geometry}
+                                material={materials.LigthBlue}
+                            />
+                        </group>
+                    </NavObject>
+                    <NavObject navPath='/home/selery'>
                     <group
                         name="Cube"
                         position={[0.24, 3, 1.78]}
@@ -665,6 +675,7 @@ const Room: React.FC = () => {
                             material={materials.Blue}
                         />
                     </group>
+                    </NavObject>
                 </group>
             </group>
         </Suspense>

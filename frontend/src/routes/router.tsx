@@ -13,6 +13,7 @@ import Marketplace from "./pages/Marketplace";
 import Message from './pages/Message';
 import Root from "./pages/Root";
 import Cart from './pages/Cart';
+import Selery from './pages/Selery';
 
 export const router = createBrowserRouter([
    {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
             path: '/home/',
             element: <GlobalLayout/>,
             children: [
+               {
+                  path: '/home/selery',
+                  element: <Selery/>,
+               },
                {
                   path: '/home/market',
                   element: <Marketplace />,
